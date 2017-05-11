@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>Navegacao</title>
+<link rel="stylesheet" type="text/css" href="/ise/resources/vendor/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body class="navContainer" ng-controller="notificacaoCtrl">
+	<div id="navInfo">		
+		<span style="font-weight: bold; color: red; font-size: 14px"
+			ng-show="dadosSessao.jbossLocalComBancoProducao == 'true'"
+			ng-bind="msgAmbienteProducao"></span> <br> 
+		<span class="unidadeLabel">Servidor:&nbsp;</span>
+		<span class="servidor" ng-bind="dadosSessao.servidorAtual"></span>
+		<span class="navegador">Navegador:</span>&nbsp;<span ng-bind="navegadorName"></span>
+	</div>
+	<div id="atualizaTotal" ng-click="atualizaTotalNotificacoes();" style="visibility: hidden;"></div>
+	<div id="navBotoes">
+		<ul>
+			<li>
+				<div id="idIconeListarNotificacoes"
+					style="background-image: url('../../images/notificacoes.png'); cursor: pointer; width: 24px; height: 24px; background-repeat: no-repeat;"
+					ng-show="exibeTotalNotificacoes"
+					ng-click="atualizaNotificacoes2();">
+					<div id="pnExt">
+						<div ng-show="true">
+							<div
+								style="background: red; font-size: 9; font-weight: bold; border-radius: 2px; text-align: center; color: white; width: auto; min-width: 18px; position: absolute; top: 23px; left: 3px;">
+								<div>
+									<span ng-bind="totalNotificacaoUsuario"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+			</li>
+			
+			
+			<!-- Teste Anugular -->
+			
+			<li>
+				<div>
+					<a href="../index.html" target="frmDados" role="button" class="btn btn-default btn-xs" title="estatistica">Index</a>
+				</div>
+			</li>
+			
+			
+			<!-- Fim Teste Angular -->
+			
+			
+			
+			
+			
+			<li>
+				<div>
+					<a href="../mod_adm/usuarioEditar.html" target="frmDados" role="button" class="btn btn-default btn-xs" title="Cadastrar email de segurança para recuperação de senha">Email Segurança</a>
+				</div>
+			</li>
+			<li><img src="../../images/ballon_navegacao.png"
+				alt="Avisos do Sistema" title="Avisos do ISE" onclick="avisos()" />
+			</li>
+			<li><img src="../../images/ic_mail.gif" alt="email"
+				title="Entrar em contato" onclick="mail()" /></li>
+			<li><img src="../../images/ic_senha.gif" alt="senha"
+				title="Trocar senha" onclick="alteraSenha()" /></li>
+			<li><img src="../../images/ic_ajuda.gif" alt="ajuda"
+				title="Ajuda do sistema" onclick="ajuda()" /></li>
+			<!-- title="#{msg['label.nome-sistema']} - #{perfilMB.versao}" -->
+			<li><img src="../../images/ic_sair.gif" title="{{version}} - {{buildDate}}" alt="sair"
+				border="0" onclick="logoff()" /></li>
+		</ul>
+	</div>
+	<script src="/ise/resources/vendor/requirejs/require.js" data-main="/ise/build.config.js"></script>
+	
+</body>
+</html>

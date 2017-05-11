@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="/ise/resources/vendor/bootstrap/dist/css/bootstrap.min.css">
+<title>ISE Angular App</title>
+</head>
+<body>
+	<script src="/ise/resources/vendor/requirejs/require.js" data-main="/ise/build.config.js"></script>
+	<br>
+	<style>
+	.dropdown-menu a[role="menuitem"] {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+	
+	.dropdown-menu a[role="menuitem"] span:first-child {
+		-webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		margin-right: 2em;
+	}
+	
+	.titulo_notificacao {
+		width: 95%;
+		float: left;
+		display: inline-block;
+	}
+	
+	.marcar_lida {
+		width: 5%;
+		margin-left: 95%;
+	}
+	</style>
+
+	<!-- HEADER AND NAVBAR -->
+	<header> 
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+					<li><a href="#aluno"><i class="fa fa-comment"></i>Aluno</a></li>
+					<li><a href="#estatistica"><i class="fa fa-shield"></i>Estatistica</a></li>
+					<li><a href="#notificacao"><i class="fa fa-comment"></i>Notificação</a></li>
+					<li><a href="#seguranca"><i class="fa fa-comment"></i>Segurança</a></li> 
+					<li><a href="#totais"><i class="fa fa-comment"></i>Totais Menu</a></li>
+					<li><a href="#totaisAvalListar"><i class="fa fa-comment"></i>Totais Listar</a></li>
+				</ul>
+			</div>
+	</nav> 
+	</header>
+	<div id="main">
+		<!-- angular templating -->
+		<!-- this is where content will be injected -->
+		<div ng-view></div>
+
+	</div>
+</body>
+</html>

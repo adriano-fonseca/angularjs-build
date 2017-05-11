@@ -1,0 +1,7 @@
+{
+    "directory": "../app/vendor/",
+	"registry": "http://bower.herokuapp.com",
+	"proxy":"http://adriano-fonseca:vamasf158@proxy.procergs.reders:3128",
+	"https-proxy":"http://adriano-fonseca:vamasf158@proxy.procergs.reders:3128",
+	"strict-ssl": false
+}

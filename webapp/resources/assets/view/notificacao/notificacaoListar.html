@@ -1,0 +1,74 @@
+<style>
+	.dropdown-menu a[role="menuitem"] {
+	    display: -webkit-box;
+	    display: -moz-box;
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	}
+	.dropdown-menu a[role="menuitem"] span:first-child {
+	    -webkit-box-flex: 1;
+	    -moz-box-flex: 1;
+	    -webkit-flex: 1;
+	    -ms-flex: 1;
+	    flex: 1;
+	    margin-right: 2em;
+	}
+	
+	
+	.titulo_notificacao {
+	 width:95%;
+	 float:left;
+	 display:inline-block;
+	}
+	.marcar_lida {
+	  width:5%; 
+	  margin-left: 95%;
+	}
+</style>
+
+<!-- <div class="btn-group"> -->
+<!--   <button class="btn btn-danger" type="button">CRE</button> -->
+<!--   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+<!--     <span class="caret"></span> -->
+<!--     <span class="sr-only">Toggle Dropdown</span> -->
+<!--   </button> -->
+<!--     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> -->
+<!--         <li role="presentation"> -->
+<!--             <a role="menuitem" tabindex="-1" href="#"> -->
+<!--                 <span>CRE 1</span> -->
+<!--                 <span class="badge">10</span> -->
+<!--             </a> -->
+<!--         </li> -->
+<!--         <li role="presentation"> -->
+<!--             <a role="menuitem" tabindex="-1" href="#"> -->
+<!--                 <span>CRE 2</span> -->
+<!--                 <span class="badge">9</span> -->
+<!--             </a> -->
+<!--         </li> -->
+<!--     </ul> -->
+<!-- </div> -->
+<!-- <br> -->
+
+<div ng-show="msgAmbienteProducao"></div>
+<div infinite-scroll='listData()' infinite-scroll-distance='1'>
+	<div class="col-md-4" ng-repeat="data in notificacoes track by $index">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+		<div class="titulo_notificacao">
+		{{$index}} - {{data.tituloNotificacao}}
+		</div>
+		<div class="marcar_lida">
+			<img src="/ise/resources/assets/images/apply.png" style="cursor:pointer;" title="MARCAR COMO LIDA" />
+		</div>
+		</div>
+		<div class="panel-body">
+		   <div ng-bind-html="data.textoNotificacao"></div>
+		 </div>
+		 <div>
+		 <a href="#notificacao/{{data.tituloNotificacao}}" class="btn btn-info btn-sm btn-block"> Acessar</a>
+		 </div>
+	</div>
+	</div>
+</div>
+ 
